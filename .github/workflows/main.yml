@@ -1,0 +1,50 @@
+name: obesity-classification MLflow
+
+on:
+  push:
+    branches:
+      
+main
+pull_request:
+  branches:
+main,
+,
+permissions:
+  contents: write
+
+env:
+  TRAIN_CSV: "data_train_obesity_preprocess.csv"
+  TEST_CSV: "data_test_obesity_preprocess.csv"
+  TARGET_VAR: "Index"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    #Checkout Repository
+      
+uses: actions/checkout@v3#Set up python
+name: Set up Python 3.11.1
+    uses: actions/setup-python@v4
+    with:
+      python-version: "3.11.1"#Check Env
+name: Check Environment
+  run: |
+    echo $TRAIN_CSV
+    echo $TEST_CSV#Install Dependensi
+name: Install dependencies
+run: |
+  python -m pip install --upgrade pip
+  pip install mlflow,
+#Run MLflow project
+name: Run mlflow project
+run: mlflow run MLproject --env-manager=local,
+
+name: Save mlruns to repo
+      run: |
+        git config --global user.name ${{ secrets.username }}
+        git config --global user.email ${{ secrets.email }}
+        git add mlruns/
+        git commit -m "Save mlruns from CI run"
+        git push origin master
