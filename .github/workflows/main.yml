@@ -2,14 +2,11 @@ name: obesity-classification MLflow
 
 on:
   push:
-    branches:
-      
-main
-pull_request:
-  branches:
-main,
-,
-permissions:
+    branches: [main]
+  pull_request: 
+    branches: [main]
+
+permissions: 
   contents: write
 
 env:
