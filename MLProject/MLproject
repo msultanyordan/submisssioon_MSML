@@ -1,0 +1,14 @@
+name: obesitas-mlflow
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      n_estimators: { type: int, default: 50 }
+      max_depth: { type: int, default: 5 }
+      train_dataset:
+        { type: string, default: "data_train_obesity_preprocess.csv" }
+      test_dataset:
+        { type: string, default: "data_test_obesity_preprocess.csv" }
+    command: "python modelling.py {n_estimators} {max_depth} {train_dataset} {test_dataset}"
