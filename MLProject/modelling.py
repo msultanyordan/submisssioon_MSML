@@ -5,20 +5,18 @@ from sklearn.model_selection import train_test_split
 import random
 import numpy as np
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+if __name__ == "__main__":
+    warnings.filterwarnings("ignore")
+    np.random.seed(42)
+    data_train = pd.read_csv("data_train_obesity_preprocess.csv")
+    data_test = pd.read_csv("data_test_obesity_preprocess.csv")
 
-# Create a new MLflow Experiment
-mlflow.set_experiment("Test Obesity")
+    X_train = data_train.drop("Index", axis=1)
+    y_train = data_train["Index"]
+    X_test = data_test.drop("Index", axis=1)
+    y_test = data_test["Index"]
 
-data_train = pd.read_csv("data_train_obesity_preprocess.csv")
-data_test = pd.read_csv("data_test_obesity_preprocess.csv")
-
-X_train = data_train.drop("Index", axis=1)
-y_train = data_train["Index"]
-X_test = data_test.drop("Index", axis=1)
-y_test = data_test["Index"]
-
-input_example = X_train[0:5]
+    input_example = X_train[0:5]
 
 
 with mlflow.start_run():
