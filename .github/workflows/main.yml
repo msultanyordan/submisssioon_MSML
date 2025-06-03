@@ -21,27 +21,27 @@ jobs:
     steps:
 #Checkout Repository
       
-     -uses: actions/checkout@v3
+   - uses: actions/checkout@v3
 #Set up python
-     -name: Set up Python 3.11.1
+   - name: Set up Python 3.11.1
      uses: actions/setup-python@v4
      with:
       python-version: "3.11.1"
 #Check Env
-     -name: Check Environment
+   - name: Check Environment
      run: |
        echo $TRAIN_CSV
        echo $TEST_CSV
 #Install Dependensi    
-     -name: Install dependencies
+   - name: Install dependencies
      run: |
        python -m pip install --upgrade pip
        pip install mlflow,
 #Run MLflow project
-     -name: Run mlflow project
+   - name: Run mlflow project
      run: mlflow run MLproject --env-manager=local,
 
-     -name: Save mlruns to repo
+   - name: Save mlruns to repo
      run: |
          git config --global user.name ${{ secrets.username }}
          git config --global user.email ${{ secrets.email }}
