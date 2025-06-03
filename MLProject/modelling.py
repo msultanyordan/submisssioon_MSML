@@ -4,6 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import random
 import numpy as np
+import warnings
 
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")
