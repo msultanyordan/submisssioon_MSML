@@ -1,0 +1,9 @@
+digest: 6edc8960
+name: dataset
+profile: '{"num_rows": 331, "num_elements": 993}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "Gender", "required": true},
+  {"type": "double", "name": "Height", "required": true}, {"type": "double", "name":
+  "Weight", "required": true}]}'
+source: '{"tags": {"mlflow.user": "runner", "mlflow.source.name": "modelling.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "c5be219fd8925f30a1cc81f5efd7720a07a06427"}}'
+source_type: code

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/submisssioon_MSML/submisssioon_MSML/mlruns/0/3bccb2c84b1c4ea19378f0fe0e884b53/artifacts
+end_time: 1748970733524
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3bccb2c84b1c4ea19378f0fe0e884b53
+run_name: powerful-gnat-789
+run_uuid: 3bccb2c84b1c4ea19378f0fe0e884b53
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748970722269
+status: 3
+tags: []
+user_id: runner
